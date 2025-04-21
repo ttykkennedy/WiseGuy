@@ -46,6 +46,9 @@ static int  Application_GetFrame();
 static void Application_OpenURL(const std::string& url);
 static bool BuildSceneActorsAndComponents(Scene& scene, const std::string& scenePath);
 
+constexpr AkGameObjectID LISTENER_ID = 1;
+constexpr AkGameObjectID PLAYER_ID = 2;
+
 int runSDLGame()
 {
     int windowWidth = 640;
@@ -163,6 +166,10 @@ int runSDLGame()
     {
         std::cout << "[Wwise] Could not initialize. Continuing without Wwise.\n";
     }
+
+    WwiseAudioSystem::RegisterGameObj(LISTENER_ID, "Listener");
+    WwiseAudioSystem::RegisterGameObj(PLAYER_ID, "Player");
+    WwiseAudioSystem::SetListener(LISTENER_ID);
 
     using namespace luabridge;
     getGlobalNamespace(ComponentDB::lua_state)
@@ -364,6 +371,18 @@ int runSDLGame()
             +[](const std::string& switchGroup, const std::string& switchState, AkGameObjectID objID) {
                 WwiseAudioSystem::SetSwitch(switchGroup, switchState, objID);
             })
+        .addFunction("SetState",
+            +[](const std::string& group, const std::string& state) {
+                WwiseAudioSystem::SetState(group, state);
+            })
+        .addFunction("SetGameObjectPosition",
+            +[](AkGameObjectID id, float x, float y, float z) {
+                WwiseAudioSystem::SetGameObjectPosition(id, x, y, z);
+            })
+        .addFunction("SetListener",
+            +[](AkGameObjectID id) {
+                WwiseAudioSystem::SetListener(id);
+            })
         .endNamespace();
 
     Scene scene;
@@ -384,6 +403,8 @@ int runSDLGame()
     }
     scene.loadFromFile(scenePath);
     BuildSceneActorsAndComponents(scene, scenePath);
+
+    float demoTime = 0.0f;
 
     bool quit = false;
     SDL_Event event;
@@ -596,6 +617,11 @@ int runSDLGame()
             }
             actor->pendingComponentKeysToRemove.clear();
         }
+
+        demoTime += 1.0f / 60.0f;
+        float t = std::fmod(demoTime, 1.0f);
+        WwiseAudioSystem::SetRTPCValue("DemoTime", t, PLAYER_ID);
+        WwiseAudioSystem::SetGameObjectPosition(PLAYER_ID, 0.0f, 0.0f, 0.0f);
 
         WwiseAudioSystem::Update();
         // render
