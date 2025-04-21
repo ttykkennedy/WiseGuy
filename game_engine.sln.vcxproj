@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>17.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{a906dd25-7b27-46b9-ad94-cec680f29b7a}</ProjectGuid>
+    <RootNamespace>gameenginesln</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>game_engine</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_SILENCE_ALL_CXX17_DEPRECATION_WARNINGS</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <AdditionalIncludeDirectories>$(ProjectDir)glm;$(ProjectDir)rapidjson\include;$(ProjectDir);$(ProjectDir)box2d;$(ProjectDir)Wwise2024.1.3.8749\SDK\include;$(ProjectDir)Wwise2024.1.3.8749\SDK\samples\SoundEngine\Win32;$(ProjectDir)Wwise2024.1.3.8749\SDK\samples\SoundEngine\Common;$(ProjectDir)SDL2;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(ProjectDir)SDL2\lib;$(ProjectDir)SDL_image\lib;$(ProjectDir)SDL_mixer\lib;$(ProjectDir)SDL_ttf\lib\;$(ProjectDir)Wwise2024.1.3.8749\SDK\x64_vc170\Debug\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_image.lib;SDL2_mixer.lib;SDL2_ttf.lib;CommunicationCentral.lib;AkSoundEngine.lib;AkMemoryMgr.lib;AkStreamMgr.lib;AkMusicEngine.lib;AkSpatialAudio.lib;AkAudioInputSource.lib;ws2_32.lib;AkRoomVerbFX.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <PostBuildEvent>
+      <Command>
+      </Command>
+    </PostBuildEvent>
+    <PreBuildEvent>
+      <Command>copy dlls\* $(OutDir)</Command>
+    </PreBuildEvent>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_SILENCE_ALL_CXX17_DEPRECATION_WARNINGS</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(ProjectDir)glm;$(ProjectDir)rapidjson\include;$(ProjectDir);$(ProjectDir)box2d;$(ProjectDir)Wwise2024.1.3.8749\SDK\include;$(ProjectDir)Wwise2024.1.3.8749\SDK\samples\SoundEngine\Win32;$(ProjectDir)Wwise2024.1.3.8749\SDK\samples\SoundEngine\Common;$(ProjectDir)SDL2;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(ProjectDir)SDL2\lib;$(ProjectDir)SDL_image\lib;$(ProjectDir)SDL_mixer\lib;$(ProjectDir)SDL_ttf\lib\;$(ProjectDir)Wwise2024.1.3.8749\SDK\x64_vc170\Debug\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_image.lib;SDL2_mixer.lib;SDL2_ttf.lib;CommunicationCentral.lib;AkSoundEngine.lib;AkMemoryMgr.lib;AkStreamMgr.lib;AkMusicEngine.lib;AkSpatialAudio.lib;AkAudioInputSource.lib;ws2_32.lib;AkRoomVerbFX.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <PostBuildEvent>
+      <Command>
+      </Command>
+    </PostBuildEvent>
+    <PreBuildEvent>
+      <Command>copy dlls\* $(OutDir)</Command>
+    </PreBuildEvent>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <None Include=".gitignore" />
+    <None Include="Makefile" />
+    <None Include="README.md" />
+    <None Include="Wwise2024.1.3.8749\SDK\samples\SoundEngine\Common\AkFilePackageLowLevelIO.inl" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Actor.cpp" />
+    <ClCompile Include="AudioSystem.cpp" />
+    <ClCompile Include="box2d\b2_block_allocator.cpp" />
+    <ClCompile Include="box2d\b2_body.cpp" />
+    <ClCompile Include="box2d\b2_broad_phase.cpp" />
+    <ClCompile Include="box2d\b2_chain_circle_contact.cpp" />
+    <ClCompile Include="box2d\b2_chain_polygon_contact.cpp" />
+    <ClCompile Include="box2d\b2_chain_shape.cpp" />
+    <ClCompile Include="box2d\b2_circle_contact.cpp" />
+    <ClCompile Include="box2d\b2_circle_shape.cpp" />
+    <ClCompile Include="box2d\b2_collide_circle.cpp" />
+    <ClCompile Include="box2d\b2_collide_edge.cpp" />
+    <ClCompile Include="box2d\b2_collide_polygon.cpp" />
+    <ClCompile Include="box2d\b2_collision.cpp" />
+    <ClCompile Include="box2d\b2_contact.cpp" />
+    <ClCompile Include="box2d\b2_contact_manager.cpp" />
+    <ClCompile Include="box2d\b2_contact_solver.cpp" />
+    <ClCompile Include="box2d\b2_distance.cpp" />
+    <ClCompile Include="box2d\b2_distance_joint.cpp" />
+    <ClCompile Include="box2d\b2_draw.cpp" />
+    <ClCompile Include="box2d\b2_dynamic_tree.cpp" />
+    <ClCompile Include="box2d\b2_edge_circle_contact.cpp" />
+    <ClCompile Include="box2d\b2_edge_polygon_contact.cpp" />
+    <ClCompile Include="box2d\b2_edge_shape.cpp" />
+    <ClCompile Include="box2d\b2_fixture.cpp" />
+    <ClCompile Include="box2d\b2_friction_joint.cpp" />
+    <ClCompile Include="box2d\b2_gear_joint.cpp" />
+    <ClCompile Include="box2d\b2_island.cpp" />
+    <ClCompile Include="box2d\b2_joint.cpp" />
+    <ClCompile Include="box2d\b2_math.cpp" />
+    <ClCompile Include="box2d\b2_motor_joint.cpp" />
+    <ClCompile Include="box2d\b2_mouse_joint.cpp" />
+    <ClCompile Include="box2d\b2_polygon_circle_contact.cpp" />
+    <ClCompile Include="box2d\b2_polygon_contact.cpp" />
+    <ClCompile Include="box2d\b2_polygon_shape.cpp" />
+    <ClCompile Include="box2d\b2_prismatic_joint.cpp" />
+    <ClCompile Include="box2d\b2_pulley_joint.cpp" />
+    <ClCompile Include="box2d\b2_revolute_joint.cpp" />
+    <ClCompile Include="box2d\b2_rope.cpp" />
+    <ClCompile Include="box2d\b2_settings.cpp" />
+    <ClCompile Include="box2d\b2_stack_allocator.cpp" />
+    <ClCompile Include="box2d\b2_timer.cpp" />
+    <ClCompile Include="box2d\b2_time_of_impact.cpp" />
+    <ClCompile Include="box2d\b2_weld_joint.cpp" />
+    <ClCompile Include="box2d\b2_wheel_joint.cpp" />
+    <ClCompile Include="box2d\b2_world.cpp" />
+    <ClCompile Include="box2d\b2_world_callbacks.cpp" />
+    <ClCompile Include="Camera.cpp" />
+    <ClCompile Include="ComponentDB.cpp" />
+    <ClCompile Include="ImageSystem.cpp" />
+    <ClCompile Include="Input.cpp" />
+    <ClCompile Include="lua\lapi.c" />
+    <ClCompile Include="lua\lauxlib.c" />
+    <ClCompile Include="lua\lbaselib.c" />
+    <ClCompile Include="lua\lcode.c" />
+    <ClCompile Include="lua\lcorolib.c" />
+    <ClCompile Include="lua\lctype.c" />
+    <ClCompile Include="lua\ldblib.c" />
+    <ClCompile Include="lua\ldebug.c" />
+    <ClCompile Include="lua\ldo.c" />
+    <ClCompile Include="lua\ldump.c" />
+    <ClCompile Include="lua\lfunc.c" />
+    <ClCompile Include="lua\lgc.c" />
+    <ClCompile Include="lua\linit.c" />
+    <ClCompile Include="lua\liolib.c" />
+    <ClCompile Include="lua\llex.c" />
+    <ClCompile Include="lua\lmathlib.c" />
+    <ClCompile Include="lua\lmem.c" />
+    <ClCompile Include="lua\loadlib.c" />
+    <ClCompile Include="lua\lobject.c" />
+    <ClCompile Include="lua\lopcodes.c" />
+    <ClCompile Include="lua\loslib.c" />
+    <ClCompile Include="lua\lparser.c" />
+    <ClCompile Include="lua\lstate.c" />
+    <ClCompile Include="lua\lstring.c" />
+    <ClCompile Include="lua\lstrlib.c" />
+    <ClCompile Include="lua\ltable.c" />
+    <ClCompile Include="lua\ltablib.c" />
+    <ClCompile Include="lua\ltm.c" />
+    <ClCompile Include="lua\lundump.c" />
+    <ClCompile Include="lua\lutf8lib.c" />
+    <ClCompile Include="lua\lvm.c" />
+    <ClCompile Include="lua\lzio.c" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="ParticleSystem.cpp" />
+    <ClCompile Include="Rigidbody.cpp" />
+    <ClCompile Include="Scene.cpp" />
+    <ClCompile Include="SDLGame.cpp" />
+    <ClCompile Include="TextSystem.cpp" />
+    <ClCompile Include="Wwise2024.1.3.8749\SDK\samples\SoundEngine\Common\AkDefaultLowLevelIODispatcher.cpp" />
+    <ClCompile Include="Wwise2024.1.3.8749\SDK\samples\SoundEngine\Common\AkFileLocationBase.cpp" />
+    <ClCompile Include="Wwise2024.1.3.8749\SDK\samples\SoundEngine\Common\AkFilePackage.cpp" />
+    <ClCompile Include="Wwise2024.1.3.8749\SDK\samples\SoundEngine\Common\AkFilePackageLUT.cpp" />
+    <ClCompile Include="Wwise2024.1.3.8749\SDK\samples\SoundEngine\Common\AkGeneratedSoundBanksResolver.cpp" />
+    <ClCompile Include="Wwise2024.1.3.8749\SDK\samples\SoundEngine\Common\AkJobWorkerMgr.cpp" />
+    <ClCompile Include="Wwise2024.1.3.8749\SDK\samples\SoundEngine\Common\AkMultipleFileLocation.cpp" />
+    <ClCompile Include="Wwise2024.1.3.8749\SDK\samples\SoundEngine\Common\AkPlatformProfilerHookStubs.cpp" />
+    <ClCompile Include="Wwise2024.1.3.8749\SDK\samples\SoundEngine\Win32\AkDefaultIOHookDeferred.cpp" />
+    <ClCompile Include="Wwise2024.1.3.8749\SDK\samples\SoundEngine\Win32\stdafx.cpp" />
+    <ClCompile Include="WwiseAudioSystem.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Actor.h" />
+    <ClInclude Include="AudioHelper.h" />
+    <ClInclude Include="AudioSystem.h" />
+    <ClInclude Include="Camera.h" />
+    <ClInclude Include="ComponentDB.h" />
+    <ClInclude Include="Helper.h" />
+    <ClInclude Include="ImageSystem.h" />
+    <ClInclude Include="Input.h" />
+    <ClInclude Include="ParticleSystem.h" />
+    <ClInclude Include="Rigidbody.h" />
+    <ClInclude Include="Scene.h" />
+    <ClInclude Include="SDLGame.h" />
+    <ClInclude Include="TextSystem.h" />
+    <ClInclude Include="Wwise2024.1.3.8749\SDK\samples\SoundEngine\Common\AkDefaultLowLevelIODispatcher.h" />
+    <ClInclude Include="Wwise2024.1.3.8749\SDK\samples\SoundEngine\Common\AkFileHelpersBase.h" />
+    <ClInclude Include="Wwise2024.1.3.8749\SDK\samples\SoundEngine\Common\AkFileLocationBase.h" />
+    <ClInclude Include="Wwise2024.1.3.8749\SDK\samples\SoundEngine\Common\AkFilePackage.h" />
+    <ClInclude Include="Wwise2024.1.3.8749\SDK\samples\SoundEngine\Common\AkFilePackageLowLevelIO.h" />
+    <ClInclude Include="Wwise2024.1.3.8749\SDK\samples\SoundEngine\Common\AkFilePackageLowLevelIODeferred.h" />
+    <ClInclude Include="Wwise2024.1.3.8749\SDK\samples\SoundEngine\Common\AkFilePackageLUT.h" />
+    <ClInclude Include="Wwise2024.1.3.8749\SDK\samples\SoundEngine\Common\AkGeneratedSoundBanksResolver.h" />
+    <ClInclude Include="Wwise2024.1.3.8749\SDK\samples\SoundEngine\Common\AkJobWorkerMgr.h" />
+    <ClInclude Include="Wwise2024.1.3.8749\SDK\samples\SoundEngine\Common\AkMultipleFileLocation.h" />
+    <ClInclude Include="Wwise2024.1.3.8749\SDK\samples\SoundEngine\Common\AkPlatformProfilerHooks.h" />
+    <ClInclude Include="Wwise2024.1.3.8749\SDK\samples\SoundEngine\Win32\AkDefaultIOHookDeferred.h" />
+    <ClInclude Include="Wwise2024.1.3.8749\SDK\samples\SoundEngine\Win32\AkFileHelpers.h" />
+    <ClInclude Include="Wwise2024.1.3.8749\SDK\samples\SoundEngine\Win32\stdafx.h" />
+    <ClInclude Include="WwiseAudioSystem.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
